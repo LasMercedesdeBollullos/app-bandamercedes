@@ -3,50 +3,135 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>App Banda de Música</title>
-  <link rel="manifest" href="manifest.json">
+  <title>Las Mercedes de Bollullos</title>
   <style>
-    body { font-family: system-ui, sans-serif; margin: 0; background: #f4f4f9; color: #333; }
-    header { background: #1e293b; color: white; padding: 1rem; text-align: center; }
-    nav { display: flex; overflow-x: auto; background: #0f172a; padding: 0.5rem; gap: 0.5rem; }
-    nav button { background: #334155; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; white-space: nowrap; cursor: pointer; }
-    nav button.active { background: #2563eb; }
-    main { padding: 1rem; }
-    .module { display: none; background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .module.active { display: block; }
+    :root {
+      --bg-color: #08073D;
+      --card-bg: rgba(255, 255, 255, 0.07);
+      --gold: #D4AF37;
+      --text-color: #FFFFFF;
+      --subtext: #D0D0D0;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+      margin-bottom: 25px;
+    }
+
+    .logo-img {
+      width: 110px;
+      height: auto;
+      margin-bottom: 10px;
+      border-radius: 8px;
+    }
+
+    h1 {
+      font-size: 1.1rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+      margin: 0;
+      text-transform: uppercase;
+      color: var(--subtext);
+    }
+
+    .band-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin: 5px 0 0 0;
+      letter-spacing: 1px;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      color: var(--gold);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-left: 4px solid var(--gold);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 15px;
+      backdrop-filter: blur(5px);
+    }
+
+    .card-tag {
+      font-size: 0.8rem;
+      font-weight: bold;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      margin: 4px 0;
+      font-size: 0.95rem;
+      color: var(--subtext);
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.8rem;
+      color: var(--subtext);
+      opacity: 0.6;
+    }
   </style>
 </head>
 <body>
-  <header><h1>Gestión Banda de Música</h1></header>
-  <nav id="menu">
-    <button onclick="showModule('inicio')" class="active">Inicio</button>
-    <button onclick="showModule('calendario')">Calendario</button>
-    <button onclick="showModule('asistencia')">Asistencia</button>
-    <button onclick="showModule('componentes')">Componentes</button>
-    <button onclick="showModule('repertorio')">Repertorio</button>
-    <button onclick="showModule('avisos')">Avisos</button>
-    <button onclick="showModule('material')">Material</button>
-    <button onclick="showModule('viajes')">Viajes</button>
-    <button onclick="showModule('admin')">Admin</button>
-  </nav>
+
+  <header>
+    <img src="cf8b3dfa-ffb5-4014-9109-bfe8cbc1c1d8.jpeg" alt="Escudo Banda Las Mercedes" class="logo-img">
+    <h1>Banda de Música</h1>
+    <div class="band-title">LAS MERCEDES</div>
+    <div style="font-size: 0.9rem; color: var(--subtext);">de Bollullos</div>
+  </header>
+
   <main>
-    <div id="inicio" class="module active"><h2>🏠 Inicio</h2><p>Próximo ensayo: Viernes 20:00h</p></div>
-    <div id="calendario" class="module"><h2>📅 Calendario</h2><p>Listado de eventos y actuaciones.</p></div>
-    <div id="asistencia" class="module"><h2>✅ Asistencia</h2><p>Confirma tu asistencia a los ensayos.</p></div>
-    <div id="componentes" class="module"><h2>👥 Componentes</h2><p>Listado de músicos por sección.</p></div>
-    <div id="repertorio" class="module"><h2>🎼 Repertorio</h2><p>Partituras y obras activas.</p></div>
-    <div id="avisos" class="module"><h2>📢 Avisos</h2><p>Tablón de anuncios oficiales.</p></div>
-    <div id="material" class="module"><h2>🎷 Material</h2><p>Control de uniformes e instrumentos.</p></div>
-    <div id="viajes" class="module"><h2>🚌 Viajes</h2><p>Horarios y autobuses.</p></div>
-    <div id="admin" class="module"><h2>⚙️ Panel Admin</h2><p>Gestión global de la banda.</p></div>
+    <div class="section-title">
+      <span>📅</span> Próximas Actuaciones
+    </div>
+
+    <!-- Actuación 1 -->
+    <div class="card">
+      <div class="card-tag">30 de Agosto (Mañana)</div>
+      <h3>Traslado de Ntra. Sra. del Valle</h3>
+      <p>📍 La Palma del Condado</p>
+      <p>🕢 07:30 h - 12:30 h</p>
+    </div>
+
+    <!-- Actuación 2 -->
+    <div class="card">
+      <div class="card-tag">30 de Agosto (Tarde)</div>
+      <h3>Traslado Ntra. Sra. de Consolación</h3>
+      <p>📍 Cartaya</p>
+      <p>🕘 21:00 h - 23:00 h</p>
+    </div>
   </main>
-  <script>
-    function showModule(id) {
-      document.querySelectorAll('.module').forEach(m => m.classList.remove('active'));
-      document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-      event.target.classList.add('active');
-    }
-  </script>
+
+  <footer class="footer">
+    © Banda de Música Las Mercedes de Bollullos - 1963
+  </footer>
+
 </body>
 </html>
